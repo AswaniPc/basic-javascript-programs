@@ -1,0 +1,19 @@
+<!--JavaScript program to display length of a string entered in a textbox.-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js8</title>
+</head>
+<body>
+<input type="textbox" name="text" id="ipt">
+<input type="button" value="find length" onclick="length()">
+<div id="ans"></div>
+<script type="text/javascript">
+function length()
+{
+var n=document.getElementById("ipt").value;
+document.getElementById("ans").innerHTML=n.length;
+}
+</script>
+</body>
+</html>

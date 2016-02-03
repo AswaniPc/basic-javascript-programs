@@ -1,0 +1,67 @@
+<!--Add and remove items between two multiple selection boxes -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js18</title>
+	<script type="text/javascript">
+	
+	function fremove()
+	{
+		x = document.getElementById("main");
+		y=document.getElementById("selected");
+		for (var i=0; i<=x.length; i++)
+		{
+		var option = document.createElement("option");
+    	option.text = x.options[x.selectedIndex].value;
+		x.remove(x.selectedIndex);
+		y.add(option);
+		}
+
+	}
+	function fadd()
+	{
+		x = document.getElementById("main");
+		y=document.getElementById("selected");
+		for (var i=0; i<=y.length; i++)
+		{
+		var option = document.createElement("option");
+    	option.text = y.options[y.selectedIndex].value;
+		y.remove(y.selectedIndex);
+		x.add(option);
+		}
+	}
+	
+	</script>
+</head>
+<body>
+<table>
+<tr>
+<td>
+<select id="main" multiple size="8">
+	<option selected disabled>select items</option>
+	<option>a</option>
+	<option>b</option>
+	<option>c</option>
+	<option>d</option>
+	<option>e</option>
+	<option>f</option>
+	<option>g</option>
+</select>
+</td>
+<td>
+<select id="selected" multiple size="8">
+	<option selected disabled>selected items</option>
+</select>
+</td>
+<tr>
+	<td>
+		<button onclick="fremove();">add items to cart</button>
+		
+	</td>
+	<td>
+		<button onclick="fadd();">remove items from cart</button>
+	</td>
+</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!--JavaScript program to check whether date entered in the text box is greater than or less than current date-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js14</title>
+</head>
+<body>
+<input type="date" id="ipt">
+<input type="button" value="find" onclick="compare()">
+<div id="opt"></div>
+<script type="text/javascript">
+function compare()
+{
+var today = new Date();
+var date1 = new Date(document.getElementById("ipt").value);
+if(date1.valueOf() < today.valueOf())
+{
+    document.getElementById("opt").innerHTML="entered date is less than current date";
+}
+else 
+{
+	document.getElementById("opt").innerHTML="entered date is greater than current date";
+}
+}
+</script>
+</body>
+</html>

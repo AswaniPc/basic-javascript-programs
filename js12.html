@@ -1,0 +1,24 @@
+<!--JavaScript function to calculate age from date of birth entered in a textbox-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js12</title>
+</head>
+<body>
+<input type="date" id="ipt">
+<input type="button" value="find" onclick="age()">
+<br>
+age:<div id="opt"></div>
+<script type="text/javascript">
+function age()
+{
+	today=new Date();
+	alert(today.getFullYear());
+	dob=document.getElementById('ipt').value;
+	date1=new Date(dob);
+	alert(date1.getFullYear());
+	document.getElementById("opt").innerHTML=(today.getFullYear()-date1.getFullYear());
+}
+</script>
+</body>
+</html>

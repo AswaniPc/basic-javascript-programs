@@ -1,0 +1,191 @@
+<!--Form validation-->
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		#l1,#l2,#l3,#l4,#l5,#l6
+		{
+			color: red;
+			font-size: 5mm;
+			text-align: center;
+		}
+	</style>
+	<title>js17</title>
+	<script type="text/javascript">
+	function valid()
+	{
+		validate="true";
+		nam=document.getElementById("name").value;
+		pwd=document.getElementById("pswd").value;
+		mle=document.getElementById("mail").value;
+		gen=document.getElementsByName("gender")[0];
+		plc=document.getElementById("plce").value;
+		lang1=document.getElementById("m");
+		lang2=document.getElementById("e");
+		lang3=document.getElementById("h");
+		var pattern=/^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
+		if (nam=="")
+			{
+				document.getElementById("l1").innerHTML="Enter name";
+				validate=false;
+			}
+		else if(nam.length<6)
+			{
+				document.getElementById("l1").innerHTML="username should be atleast 6 charecters";
+				validate=false;
+			}
+		else
+			{
+				document.getElementById("l1").innerHTML="";
+				
+			}
+		if(pwd.length==0)
+			{
+				document.getElementById("l2").innerHTML="enter a password";
+				validate=false;
+			}
+		else if(pwd.length<8)
+			{
+				document.getElementById("l2").innerHTML="password is too short";
+				validate=false;
+			}	
+		else
+			{
+				document.getElementById("l2").innerHTML="";
+				
+			}
+		if(gen.checked==false )
+			{
+				document.getElementById("l4").innerHTML="please choose your gender";
+				validate=false;
+			}
+		else
+			{
+				document.getElementById("l4").innerHTML="";
+			}
+		if(plc=="")
+			{
+				document.getElementById("l5").innerHTML="select your place";
+				validate=false;
+			}
+		else
+			{
+				document.getElementById("l5").innerHTML="";
+			}
+
+		if(lang1.checked==false && lang2.checked==false && lang3.checked==false)
+			{
+				document.getElementById("l6").innerHTML="select a language";
+				validate=false;
+			}
+		else
+			{
+				document.getElementById("l6").innerHTML="";
+			}
+		if(mle.length==0)
+			{
+				document.getElementById("l3").innerHTML="enter your email";
+				validate=false;
+			}
+		else if(pattern.test(mle)==false)
+			{
+				document.getElementById("l3").innerHTML="enter correct email";
+				validate=false;
+			}
+		else
+			{
+				document.getElementById("l3").innerHTML="";
+			}
+
+	alert(validate);
+	return validate;	
+	}
+	</script>
+</head>
+<body>
+<form action="html1.html" method="post" onsubmit="return valid()" >
+<table>
+<tr>
+	<th>name:</th>
+	<td>
+	<input type="text" name="name" id="name">
+	</td>
+</tr>
+<tr>
+	<td>
+		<label id="l1"></label>
+	</td>
+</tr>
+<tr>
+	<th>password:</th>
+	<td>
+	<input type="password" name="pswd" id="pswd">
+	</td>
+</tr>
+<tr>
+	<td>
+		<label id="l2"></label>
+	</td>
+</tr>
+<tr>
+	<th>email:</th>
+	<td>
+	<input type="text" name="mail" placeholder="me@example.com"id="mail">
+	</td>
+</tr>
+<tr>
+	<td>
+		<label id="l3"></label>
+	</td>
+</tr>
+<tr>
+	<th>gender:</th>
+	<td>
+	<input type="radio" name="gender" value="male">male
+	<input type="radio" name="gender" value="female">female
+	</td>
+</tr>
+<tr>
+	<td>
+		<label id="l4"></label>
+	</td>
+</tr>
+<tr>
+	<th>place:</th>
+	<td>
+		<select name="plce" id="plce">
+			<option disabled selected value="">choose place</option> 
+			<option value="c">calicut</option>
+			<option value="k">kochi</option>
+			<option value="t">trivandrum</option>
+			<option value="p">palakkad</option>
+		</select>
+	</td>
+</tr>
+<tr>
+	<td>
+		<label id="l5"></label>
+	</td>
+</tr>
+<tr>
+	<th>languages known:</th>
+	<td>
+	<input type="checkbox" name="m" id="m" >malayalam
+	<input type="checkbox" name="e" id="e">english
+	<input type="checkbox" name="h" id="h">hindi
+	</td>
+</tr>
+<tr>
+	<td>
+		<label id="l6"></label>
+	</td>
+</tr>
+<tr>
+	<td colspan="2">
+		<input type="submit" name="ok" value="submit"> 
+	</td>
+</tr>
+</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!--A two dimensional array containing Employee id, Name and Designation in JavaScript. Populate employee ids in a drop down list. On selecting an ID, Name and Designation should be appended to the table in the page-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js15</title>
+	<script type="text/javascript">
+	function fun()
+	{
+		var emp = { 1: { name: 'abc', designation: 'manager' }, 2: { name:'alice' , designation: 'director' },
+		3: { name: 'ghi', designation: 'asst.mngr' },4: { name: 'jkl', designation: 'employee' } };
+		id=document.getElementById('id').value;
+		document.getElementsByName("nam")[0].value=emp[id]["name"];
+		document.getElementsByName("dest")[0].value=emp[id]["designation"];
+	}
+	</script>
+
+</head>
+<body>
+
+<table>
+<tr>
+<td>employee id:</td>
+<td>
+<select id="id" >
+	<option selected disabled>employee id</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+</select>
+</td>
+<td>
+	<input type="submit" value="find" name="ok" onclick="fun()">
+</td>
+</tr>
+<tr>
+<td>name:</td>
+<td>
+<label id="lb1"><input type="text" value="name" name="nam"></label>
+</td>
+</tr>
+<tr>
+<td>destination:</td>
+<td>
+<label id="lb2"><input type="text" value="dest" name="dest"></label>
+</td>
+</tr>
+</table>
+</body>
+</html>

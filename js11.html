@@ -1,0 +1,24 @@
+<!--JavaScript program to add two numbers.(Numbers are input using textbox) -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js11</title>
+</head>
+<body>
+<input type="textbox" name="ipt1" id="ipt1">
+<input type="textbox" name="ipt2" id="ipt2">
+<br>
+<input type="button" value="find" onclick="find()">
+<div id="opt"></div>
+<script type="text/javascript">
+function find()
+{
+	var ip=document.getElementById('ipt1').value;
+	var it=document.getElementById("ipt2").value;
+	var n=parseInt(ip);
+	var m=parseInt(it);
+	document.getElementById("opt").innerHTML=n+m;
+}
+</script>
+</body>
+</html>

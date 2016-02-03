@@ -1,0 +1,165 @@
+<!--Form validation-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js16</title>
+	<script type="text/javascript">
+	function valid()
+	{
+		nam=document.getElementById("name").value;
+		pwd=document.getElementById("pswd").value;
+		mle=document.getElementById("mail").value;
+		gen=document.getElementsByName("gender")[0];
+		plc=document.getElementById("plce").value;
+		lang1=document.getElementById("m");
+		lang2=document.getElementById("e");
+		lang3=document.getElementById("h");
+		var pattern=/^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
+		/*x=mle.value.indexOf('@');
+		y=mle.value.lastIndexOf('.');*/
+		   
+		//if(nam.NaN == false|| nam.length<=3 )
+		/*if(x==-1 || y==-1 || (x+2)>=y)
+			{
+			alert('Email address is not valid');
+			return false;
+			}*/	
+		if (nam=="")
+			{
+				alert("Enter name");
+				validate=false;
+			}
+		else if(nam.length<6)
+			{
+				alert("username should be atleast 6 charecters");
+				validate=false;
+			}
+		else
+			{
+				alert("name entered success");
+				
+			}
+		if(pwd.length==0)
+			{
+				alert("enter a password");
+				validate=false;
+			}
+		else if(pwd.length<8)
+			{
+				alert("password is too short");
+				validate=false;
+			}	
+		else
+			{
+				alert("password succes")
+				
+			}
+		if(mle.length==0)
+			{
+				alert("enter your email");
+				validate=false;
+			}
+		else if(pattern.test(mle)==false)
+			{
+				alert("enter correct email");
+				validate=false;
+			}
+		else
+			{
+				alert("email enterd succes");
+			}
+		if(gen.checked==false )
+			{
+				alert("please choose your gender");
+				validate=false;
+			}
+		else
+			{
+				alert("gender enter success");
+			}
+		if(plc=="")
+			{
+				alert("select your place");
+				validate=false;
+			}
+		else
+			{
+				alert("place enter success");
+			}
+
+		if(lang1.checked==false && lang2.checked==false && lang3.checked==false)
+			{
+				alert("select a language");
+				validate=false;
+			}
+		else
+			{
+				alert("language entered success");
+			}
+	if(validate=="true")
+	{
+		alert("succesfully registered");
+	}
+
+	alert(validate);
+	return validate;	
+	}
+	</script>
+</head>
+<body>
+<form  action="html1.html" method="post" onsubmit="return valid()" >
+<table>
+<tr>
+	<th>name:</th>
+	<td>
+	<input type="text" name="name" id="name">
+	</td>
+</tr>
+<tr>
+	<th>password:</th>
+	<td>
+	<input type="password" name="pswd" id="pswd" >
+	</td>
+</tr>
+<tr>
+	<th>email:</th>
+	<td>
+	<input type="email" name="mail" id="mail" >
+	</td>
+</tr>
+<tr>
+	<th>gender:</th>
+	<td>
+	<input type="radio" name="gender" value="male">male
+	<input type="radio" name="gender" value="female">female
+	</td>
+</tr>
+<tr>
+	<th>place:</th>
+	<td>
+		<select placeholder="choose place" name="plce" id="plce">
+		<option selected default disabled value="">choose place</option> 
+			<option value="c">calicut</option>
+			<option value="k">kochi</option>
+			<option value="t">trivandrum</option>
+			<option value="p">palakkad</option>
+		</select>
+	</td>
+</tr>
+<tr>
+	<th>languages known:</th>
+	<td>
+	<input type="checkbox" name="m" id="m">malayalam
+	<input type="checkbox" name="e" id="e">english
+	<input type="checkbox" name="h" id="h">hindi
+	</td>
+</tr>
+<tr>
+	<td colspan="2">
+		<input type="submit" name="ok" value="submit"> 
+	</td>
+</tr>
+</table>
+</form>
+</body>
+</html>

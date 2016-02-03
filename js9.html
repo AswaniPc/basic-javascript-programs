@@ -1,0 +1,29 @@
+<!--JavaScript program to check the data type of input given in a textbox--> 
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+	function typechk()
+	{
+		val=document.getElementById("ipt").value;
+		if(isNaN(val)==true)
+		{
+			alert("string");
+			document.getElementById("opt").innerHTML="string";
+		}
+		else
+		{
+			alert("number");
+			document.getElementById("opt").innerHTML="number";
+		}
+	}
+</script>
+	<title>js9</title>
+</head>
+<body>
+<input type="textbox" name="ipt" id="ipt">
+<input type="button" value="find" onclick="typechk()">
+<div id="opt"></div>
+
+</body>
+</html>

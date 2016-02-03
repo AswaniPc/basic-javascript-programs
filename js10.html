@@ -1,0 +1,30 @@
+<!--JavaScript program to convert given string to uppercase and lowercase-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js10</title>
+</head>
+<body>
+<input type="textbox"  id="ipt">
+<br><br>
+<input type="button" value="upper" name="upper case" onclick="upper()">
+<input type="button" value="lower" name="lower case" onclick="lower()">
+<div id="opt"></div>
+<script type="text/javascript">
+function lower()
+{
+	var str=document.getElementById("ipt").value;
+	document.getElementById("opt").innerHTML=str.toLowerCase();
+
+
+}
+function upper()
+{
+	var str=document.getElementById("ipt").value;
+	document.getElementById("opt").innerHTML=str.toUpperCase();
+
+
+}
+</script>
+</body>
+</html>
