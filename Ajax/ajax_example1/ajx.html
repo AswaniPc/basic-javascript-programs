@@ -1,0 +1,64 @@
+<!--AJAX is about updating parts of a web page, without reloading the whole page.-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>registation</title>
+</head>
+<script type="text/javascript">
+	function ajx()
+		{
+			alert("hello");
+			var xml= new XMLHttpRequest();
+			xml.open("GET","ajx1.html", true);
+  			xml.send();
+  			xml.onreadystatechange = function() 
+			{
+				
+    			if (xml.readyState == 4 && xml.status == 200) 
+    			{
+      				document.getElementById("reg").innerHTML = xml.responseText;
+    			} 
+    			//alert(xml.status);
+  			}; 
+  			
+		}
+</script>
+<body>
+<div id="home">
+<p>
+welcome
+</p>	
+</div>
+<div id="reg" align="center">
+    <form >
+    <fieldset style="width:60%;"  >
+    	<table>
+    		<tr>
+    			<th>Name:</th>
+    			<td>
+    				<input type="text" name="name" id="name">
+    			</td>
+    		</tr>
+    		<tr>
+    			<th>Email:</th>
+    			<td>
+    				<input type="text" name="email" id="email">
+    			</td>
+    		</tr>
+    		<tr>
+    			<th>Password:</th>
+    			<td>
+    				<input type="password" name="pswd" id="pswd">
+    			</td>
+    		</tr>
+    		<tr>
+    			<td colspan="2">
+    				<input type="button" name="ok" id="ok" value="register" onclick="ajx()">
+    			</td>
+    		</tr>
+    	</table>
+    </fieldset>
+    </form>
+</div>
+</body>
+</html>

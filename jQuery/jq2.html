@@ -1,0 +1,31 @@
+<!--JQuery function to clone the div on clicking the button-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>jq2</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js">
+</script>
+<script>
+$(document).ready(function()
+{	
+	$(".clone").click(function()
+	{
+    	$(".div:first").clone().appendTo("body");
+	});
+    
+});
+</script>
+</head>
+<body>
+<div class="div">
+<fieldset style="width: 50%">
+	<label for="text">Text Box:</label><br>
+	<input type="text" name="text">
+</fieldset>
+</div>
+<br>
+<input type="button" value="clone" class="clone">
+<br>
+<br>
+</body>
+</html>

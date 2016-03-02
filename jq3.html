@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jq3</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js">
+</script>
+<script>
+$(document).ready(function()
+{	
+	$("#d").hide();
+
+});
+</script>
+</head>
+<body>
+<p>Payment:</p>
+<input class="c" type="radio" value="Credit card" name="credit">Credit card
+<div id="d">
+	<label>Card number:</label>
+	<input type="text">
+	<br>
+	<br>
+	<label>Expiration:</label>
+	<input type="text" maxlength="2" size="2"> /
+	<input type="text" maxlength="2" size="2">
+	<br>
+	<br>
+	<label>3-digit security number:</label>
+	<input type="text" maxlength="3" size="3">
+</div>
+<br>
+<input class="r" type="radio" value="Wire transfer" name="credit">Wire transfer
+<br>
+<input type="button" value="Buy!" class="buy" style="color:#FFFFFF;background-color:blue;border-color: blue;">
+
+</body>
+</html>

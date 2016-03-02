@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jq3</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js">
+</script>
+<script>
+$(document).ready(function()
+{	
+	$(".d1").hide();
+	$(".d2").hide();
+    $(".c").click(function()
+    {
+        $(".d1").toggle();
+        $(".d2").hide();
+    });
+    
+    $(".r").click(function()
+    {
+        $(".d2").toggle();
+        $(".d1").hide();
+    });
+
+    $(".no").keypress(function(e)
+    {
+    	if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57))
+    	{
+    		return false;
+    	}
+    });
+
+});
+</script>
+</head>
+<body>
+<p>Payment:</p>
+<input class="c" type="radio" value="Credit card" name="credit">Credit card
+<div class="d1">
+	<label>Card number:</label>
+	<input type="text" class="no">
+	<br>
+	<br>
+	<label>Expiration:</label>
+	<input type="text" maxlength="2" size="2" class="no"> /
+	<input type="text" maxlength="2" size="2" class="no">
+	<br>
+	<br>
+	<label>3-digit security number:</label>
+	<input type="text" maxlength="3" size="3" class="no">
+</div>
+<br>
+<input class="r" type="radio" value="Wire transfer" name="credit">Wire transfer
+<div class="d2" >
+<label style="color:blue">Transfer the amount to: reg. 9570, account 0009286322</label>
+</div>
+<br>
+<input type="button" value="Buy!" class="buy" style="color:#FFFFFF;background-color:blue;border-color: blue;">
+
+</body>
+</html>

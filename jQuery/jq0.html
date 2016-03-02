@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js">
+</script>
+<script>
+$(document).ready(function()
+{	
+	$("p.a").hide();
+	$("p.b").hide();
+
+    $("input.a").click(function()
+    {
+        
+        $("p.a").show();
+        $("input.a").hide();
+
+    });
+
+    $("input.b").click(function()
+    {
+        
+        $("p.b").show();
+        $("input.b").hide();
+    });
+});
+</script>
+</head>
+<body>
+
+<p >im aswani</p>
+<p class="a">email:xxxxxxxxxx@gmail.com</p>
+<p class="b">phone:9xxxxxxxxx</p>
+<input type="button" value="view email" class="a">
+<input type="button" value="view phone no" class="b">
+</body>
+</html>
+
+
+

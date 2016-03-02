@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jq4</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js">
+</script>
+<script>
+$(document).ready(function()
+{
+	
+	$("#btn").click(function()
+	{
+		name=$("#nm").val();
+		age=$("#ag").val();
+		$(".table").append('<tr id="row"><td>'+name+'</td><td>'+age+'</td><td><button id="dlt">delete</button></td></tr>');
+		$("#nm").val("");
+		$("#ag").val("");
+
+	});
+    
+    $(document).on("click","#dlt",function()
+    {
+    	var par = $(this).parent().parent(); //tr
+		par.remove();
+    });
+});
+</script>
+</head>
+<body>
+<fieldset style="width: 50%">
+<label for="name">Name:</label>
+<input type="text" name="name" id="nm">
+<label for="age">Age:</label>
+<input type="text" name="age" id="ag">
+<input type="button" value="Add" id="btn">
+<br>
+<br>
+<table border="1" class="table">
+<tr>
+	<th width="150">Name</th>
+	<th width="150">Age</th>
+	<th width="150">Delete</th>
+</tr>
+</table>
+</fieldset>
+</body>
+</html>

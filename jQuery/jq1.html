@@ -1,0 +1,31 @@
+<!--jquery function to add item entered in the textbox to drop down list-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>jq1</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js">
+</script>
+<script>
+$(document).ready(function()
+{	
+
+    $("input#add").click(function()
+    {
+        value=$("#text").val();
+        $("#text").val("");
+        $("#drop").append("<option>"+value+"</option>");
+       
+    });
+});
+</script>
+</head>
+<body>
+<input type="text" id="text">
+<input type="button" value="Add" id="add">
+<br>
+<br>
+<select id="drop">
+    <option disabled >drop down list</option>
+</select>
+</body>
+</html>
